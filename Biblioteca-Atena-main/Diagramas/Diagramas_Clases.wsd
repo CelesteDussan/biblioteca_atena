@@ -1,0 +1,39 @@
+@startuml Diagrama_Clases
+
+class Cliente {
+    +id : int
+    +nombre : String
+    +cedula : String
+    +telefono : float
+    +email : String
+    
+    +registrarCliente() : void
+    +actualizarDatos() : void
+}
+
+class Libro {
+    +id : int
+    +titulo : String
+    +autor : String
+    +categoria : String
+    
+    +registrarLibro() : void
+    +actualizarInformacion() : void
+}
+
+class Prestamo {
+    +id : int
+    +estado : String
+    +cantidad : int
+    +fechaPrestamo : Timestamp
+    +fechaDevolucion : Timestamp
+    
+    +iniciarPrestamo() : void
+    +devolverLibro() : void
+    +actualizarEstado() : void
+}
+
+Cliente "1" --o "*" Prestamo : realiza
+Libro "1" --o "*" Prestamo : incluye
+
+@enduml

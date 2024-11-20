@@ -1,0 +1,27 @@
+@startuml Diagrama_Secuencias
+
+actor Bibliotecario
+participant "Sistema de Biblioteca" as Sistema
+participant "Base de Datos" as DB
+
+Bibliotecario -> Sistema : Consultar Información del Cliente
+Sistema -> DB : SELECT * FROM Clientes WHERE id = clienteId
+DB --> Sistema : Información del Cliente
+Sistema --> Bibliotecario : Información del Cliente
+
+Bibliotecario -> Sistema : Consultar Información del Libro
+Sistema -> DB : SELECT * FROM Libros WHERE id = libroId
+DB --> Sistema : Información del Libro
+Sistema --> Bibliotecario : Información del Libro
+
+Bibliotecario -> Sistema : Realizar Préstamo
+Sistema -> DB : INSERT INTO Prestamos (estado, cantidad, libroId, clienteId, fechaPrestamo) VALUES (...)
+DB --> Sistema : Confirmación de Préstamo
+Sistema --> Bibliotecario : Préstamo Realizado
+
+Bibliotecario -> Sistema : Actualizar Estado de Préstamo
+Sistema -> DB : UPDATE Prestamos SET estado = "Devuelto" WHERE id = prestamoId
+DB --> Sistema : Confirmación de Actualización
+Sistema --> Bibliotecario : Estado Actualizado
+
+@enduml

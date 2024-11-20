@@ -1,0 +1,7 @@
+{
+  "name": "FrontendAtena",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}

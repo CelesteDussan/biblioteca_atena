@@ -1,0 +1,13 @@
+@startuml Diagrama_Casos
+
+actor Bibliotecario
+
+Bibliotecario -> (Registrar Cliente)
+Bibliotecario -> (Registrar Libro)
+Bibliotecario -> (Realizar Préstamo)
+Bibliotecario -> (Actualizar Estado de Préstamo)
+Bibliotecario -> (Consultar Información del Cliente)
+Bibliotecario -> (Consultar Información del Libro)
+Bibliotecario -> (Consultar Historial de Préstamos)
+
+@enduml
